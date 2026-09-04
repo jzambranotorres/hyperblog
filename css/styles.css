@@ -1,21 +1,243 @@
-body{
-    color: #246;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   ============================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #334155;
+    min-height: 100vh;
 }
-#cabecera{
-    color: aqua;
-}
-#container{
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+   ============================== */
+#container {
     width: 70%;
-    padding: 1em;
-    text-align: left;
-    border: 1px solid #DDD;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.30);
+    animation: aparecer 0.8s ease;
 }
-#container h1{
-    font-size: 20px;
+
+/* ==============================
+   CABECERA
+   ============================== */
+#cabecera {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO */
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    background: white;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.logo img:hover {
+    transform: rotate(8deg) scale(1.08);
+}
+
+/* TÍTULO */
+.titulo h2 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.titulo span {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    opacity: 0.85;
+    letter-spacing: 2px;
+}
+
+
+/* VERSION */
+.version {
+    margin-left: auto;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+/* ==============================
+   POST
+   ============================== */
+#post {
+    padding: 45px;
+}
+
+/* TITULO DEL POST */
+#post h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1e293b;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+/* SEPARADOR */
+.separador {
+    width: 70px;
+    height: 4px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+}
+
+/* PARRAFOS */
+#post p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 18px;
+}
+
+/* PRIMER PARRAFO */
+
+#post .intro {
+    font-size: 19px;
+    color: #334155;
+    font-weight: 500;
+}
+
+/* ==============================
+   BLOQUE DESTACADO
+   ============================== */
+.destacado {
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 5px solid #2563eb;
+    background: #eff6ff;
+    border-radius: 0 10px 10px 0;
+    color: #1e40af;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Efecto */
+.destacado:hover {
+    transform: translateX(5px);
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+/* ==============================
+   BOTÓN
+   ============================== */
+.btn {
+    margin-top: 25px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hover del botón */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+footer {
+    padding: 18px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ==============================
+   ANIMACION
+   ============================== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   DISENO RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+    #container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    #cabecera {
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .titulo h2 {
+        font-size: 23px;
+    }
+
+    .titulo span {
+        font-size: 11px;
+    }
+
+    .version {
+        display: none;
+    }
+
+    #post {
+        padding: 25px;
+    }
+
+    #post h1 {
+        font-size: 25px;
+    }
 }
